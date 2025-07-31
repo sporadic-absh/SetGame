@@ -1,0 +1,77 @@
+.play-button {
+    -fx-font: 20px "Courier New";
+    -fx-font-weight: bold;
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-background-color: #477eff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #a8ddfc;
+    -fx-border-radius: 10px;
+}
+
+.play-button:hover {
+    -fx-background-color: #a8ddfc;
+}
+
+.instruction-button {
+    -fx-font: 20px "Courier New";
+    -fx-font-weight: bold;
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-background-color: #fd2200;
+    -fx-background-radius: 10px;
+    -fx-border-color: #fa7475;
+    -fx-border-radius: 10px;
+}
+
+.instruction-button:hover {
+    -fx-background-color: #fa7475;
+}
+
+.card-button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #d3d2d2;
+    -fx-border-radius: 10px;
+    -fx-min-width: 150px;
+    -fx-min-height: 200px;
+}
+
+.card-button:selected {
+    -fx-background-color: #fcfbba;
+}
+
+.card-button:hover {
+    -fx-background-color: #fcfbba;
+}
+
+.card-button-set {
+    -fx-background-color: #daffca;
+    -fx-background-radius: 10px;
+    -fx-border-color: #d3d2d2;
+    -fx-border-radius: 10px;
+    -fx-min-width: 150px;
+    -fx-min-height: 200px;
+}
+
+.card-button-set:selected {
+    -fx-background-color: #fcfbba;
+}
+
+.card-button-set:hover {
+    -fx-background-color: #fcfbba;
+}
+
+.card-button-small {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #d3d2d2;
+    -fx-border-radius: 10px;
+    -fx-min-width: 75px;
+    -fx-min-height: 100px;
+}
+
+.label {
+    -fx-font: 18px "Courier New";
+    -fx-font-weight: bold;
+}
