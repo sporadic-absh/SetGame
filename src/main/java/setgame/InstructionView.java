@@ -9,6 +9,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+/**
+ * This class creates the UI of the instruction view.
+ * There is no additional logic class because the instruction is static.
+ */
+
 public class InstructionView {
 
     public BorderPane getView() {
@@ -31,22 +36,38 @@ public class InstructionView {
                 Number: one, two, or three.""");
         deckText1.getStyleClass().add("label");
         deckText.getChildren().add(deckText1);
-        deckText.getChildren().add(createExample(new Card[]{new Card(0,0,0,0), new Card(1,0,0,0), new Card(2,0,0,0)}));
+        deckText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.ONE, SymbolShape.CIRCLE, SymbolColor.GREEN, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.TWO, SymbolShape.CIRCLE, SymbolColor.GREEN, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.THREE, SymbolShape.CIRCLE, SymbolColor.GREEN, SymbolShading.OUTLINED)
+        }));
 
         Text deckText2 = new Text("\nColor: green, red, or blue.");
         deckText2.getStyleClass().add("label");
         deckText.getChildren().add(deckText2);
-        deckText.getChildren().add(createExample(new Card[]{new Card(0,0,1,1), new Card(0,1,1,1), new Card(0,2,1,1)}));
+        deckText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.ONE, SymbolShape.TRIANGLE, SymbolColor.GREEN, SymbolShading.GREY),
+                new Card(SymbolNumber.ONE, SymbolShape.TRIANGLE, SymbolColor.RED, SymbolShading.GREY),
+                new Card(SymbolNumber.ONE, SymbolShape.TRIANGLE, SymbolColor.BLUE, SymbolShading.GREY)
+        }));
 
         Text deckText3 = new Text("\nShape: circle, triangle, or square.");
         deckText3.getStyleClass().add("label");
         deckText.getChildren().add(deckText3);
-        deckText.getChildren().add(createExample(new Card[]{new Card(1,1,0,2), new Card(1,1,1,2), new Card(1,1,2,2)}));
+        deckText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.TWO, SymbolShape.CIRCLE, SymbolColor.RED, SymbolShading.SOLID),
+                new Card(SymbolNumber.TWO, SymbolShape.TRIANGLE, SymbolColor.RED, SymbolShading.SOLID),
+                new Card(SymbolNumber.TWO, SymbolShape.SQUARE, SymbolColor.RED, SymbolShading.SOLID)
+        }));
 
         Text deckText4 = new Text("\nShading: outlined, grey, or solid.");
         deckText4.getStyleClass().add("label");
         deckText.getChildren().add(deckText4);
-        deckText.getChildren().add(createExample(new Card[]{new Card(2,2,2,0), new Card(2,2,2,1), new Card(2,2,2,2)}));
+        deckText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.THREE, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.THREE, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.GREY),
+                new Card(SymbolNumber.THREE, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.SOLID)
+        }));
 
         Text deckText5 = new Text("\nEvery possible combination occurs exactly once!");
         deckText5.getStyleClass().add("label");
@@ -89,7 +110,11 @@ public class InstructionView {
         Text examplesText1 = new Text("Examples for SETs:");
         examplesText1.getStyleClass().add("label");
         examplesText.getChildren().add(examplesText1);
-        examplesText.getChildren().add(createExample(new Card[]{new Card(0,1,2,0), new Card(0,1,2,1), new Card(0,1,2,2)}));
+        examplesText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.ONE, SymbolShape.SQUARE, SymbolColor.RED, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.ONE, SymbolShape.SQUARE, SymbolColor.RED, SymbolShading.GREY),
+                new Card(SymbolNumber.ONE, SymbolShape.SQUARE, SymbolColor.RED, SymbolShading.SOLID)
+        }));
         Text examplesText2 = new Text("""
                 All cards have the same number, the same color,
                 the same shape, and pairwise different shading.
@@ -97,7 +122,11 @@ public class InstructionView {
         examplesText2.getStyleClass().add("label");
         examplesText.getChildren().add(examplesText2);
 
-        examplesText.getChildren().add(createExample(new Card[]{new Card(0,2,0,2), new Card(1,2,1,2), new Card(2,2,2,2)}));
+        examplesText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.ONE, SymbolShape.CIRCLE, SymbolColor.BLUE, SymbolShading.SOLID),
+                new Card(SymbolNumber.TWO, SymbolShape.TRIANGLE, SymbolColor.BLUE, SymbolShading.SOLID),
+                new Card(SymbolNumber.THREE, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.SOLID)
+        }));
         Text examplesText3 = new Text("""
                 All cards have the same color, the same shading,
                 pairwise different numbers, and pairwise different shapes.
@@ -105,7 +134,11 @@ public class InstructionView {
         examplesText3.getStyleClass().add("label");
         examplesText.getChildren().add(examplesText3);
 
-        examplesText.getChildren().add(createExample(new Card[]{new Card(1,2,0,1), new Card(2,0,1,2), new Card(0,1,2,0)}));
+        examplesText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.ONE, SymbolShape.CIRCLE, SymbolColor.GREEN, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.TWO, SymbolShape.TRIANGLE, SymbolColor.RED, SymbolShading.GREY),
+                new Card(SymbolNumber.THREE, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.SOLID)
+        }));
         Text examplesText4 = new Text("""
                 All cards have pairwise different colors, pairwise different shading,
                 pairwise different numbers, and pairwise different shapes.
@@ -116,7 +149,11 @@ public class InstructionView {
         Text examplesText5 = new Text("Non-example for a SET:");
         examplesText5.getStyleClass().add("label");
         examplesText.getChildren().add(examplesText5);
-        examplesText.getChildren().add(createExample(new Card[]{new Card(1,0,2,0), new Card(1,1,2,0), new Card(1,2,2,2)}));
+        examplesText.getChildren().add(createExample(new Card[]{
+                new Card(SymbolNumber.TWO, SymbolShape.SQUARE, SymbolColor.GREEN, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.TWO, SymbolShape.SQUARE, SymbolColor.RED, SymbolShading.OUTLINED),
+                new Card(SymbolNumber.TWO, SymbolShape.SQUARE, SymbolColor.BLUE, SymbolShading.SOLID)
+        }));
         Text examplesText6 = new Text("""
                 All cards have the same number, the same shape, and pairwise different colors,
                 but the first two cards have the same shading, while the third one is different.
@@ -138,8 +175,8 @@ public class InstructionView {
         for (int i = 0; i <= 2; i++) {
             VBox vBox = new VBox(5);
             vBox.setAlignment(Pos.CENTER);
-            for (int j = 0; j <= cards[i].number(); j++) {
-                vBox.getChildren().add(cards[i].createShape(cards[i].shape(), cards[i].color(), cards[i].shading(), 0.4));
+            for (int j = 0; j <= cards[i].symbolNumber().ordinal(); j++) {
+                vBox.getChildren().add(cards[i].createShape(cards[i].symbolShape(), cards[i].symbolColor(), cards[i].symbolShading(), 0.4));
             }
             ToggleButton toggleButton = new ToggleButton("", vBox);
             toggleButton.getStyleClass().add("card-button-small");

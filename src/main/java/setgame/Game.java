@@ -1,5 +1,12 @@
 package setgame;
 
+/**
+ * This class manages the internal components of a round of SET.
+ * Its purpose is to keep track of the user's points
+ * and of whether they used the find set button, such that
+ * the classes Board and Deck can focus on their specific tasks.
+ */
+
 public class Game {
 
     private final Board board;

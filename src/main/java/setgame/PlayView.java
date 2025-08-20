@@ -9,6 +9,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+/**
+ * This class creates the UI of the play view.
+ * Changing UI elements are passed to the class PlayViewLogic.
+ * Button logic is also handled by the class PlayViewLogic.
+ */
+
 public class PlayView {
 
     private Game game;

@@ -4,6 +4,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.VBox;
 
+/**
+ * This class handles the logic of the UI in the play view.
+ * It updates the UI according to the internal state of the game (class Game).
+ * It also defines button logic of the play view.
+ */
+
 public class PlayViewLogic {
 
     private Game game;
@@ -25,15 +31,15 @@ public class PlayViewLogic {
     }
 
     public void updateButton(ToggleButton cardButton, VBox cardButtonVBox, Card card) {
+        cardButton.getStyleClass().clear();
+        cardButton.getStyleClass().add("card-button");
+        cardButtonVBox.getChildren().clear();
         if (card == null) {
             cardButton.setVisible(false);
             return;
         }
-        cardButton.getStyleClass().clear();
-        cardButton.getStyleClass().add("card-button");
-        cardButtonVBox.getChildren().clear();
-        for (int i = 0; i <= card.number(); i++) {
-            cardButtonVBox.getChildren().add(card.createShape(card.shape(), card.color(), card.shading(), 1));
+        for (int i = 0; i <= card.symbolNumber().ordinal(); i++) {
+            cardButtonVBox.getChildren().add(card.createShape(card.symbolShape(), card.symbolColor(), card.symbolShading(), 1));
         }
         cardButton.setVisible(true);
     }

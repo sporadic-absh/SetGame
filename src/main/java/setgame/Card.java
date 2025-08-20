@@ -7,42 +7,39 @@ import javafx.scene.shape.Shape;
 import javafx.scene.shape.StrokeType;
 
 /**
- * @param number  0 = one, 1 = two, 2 = three
- * @param color   0 = green, 1 = red, 2 = blue
- * @param shape   0 = circle, 1 = triangle, 2 = square
- * @param shading 0 = outlined, 1 = grey, 2 = solid
+ * This class handles the cards of SET.
+ * Its purpose is to create the symbol on the cards in the UI.
  */
 
-public record Card(int number, int color, int shape, int shading) {
+public record Card(SymbolNumber symbolNumber, SymbolShape symbolShape, SymbolColor symbolColor, SymbolShading symbolShading) {
 
-    public Shape createShape(int shape, int color, int shading, double scaling) {
-        Shape shapeDisplayed = switch (shape) {
-            case 0 -> new Circle(scaling * 25);
-            case 1 -> new Polygon(0, 0, scaling * 25, scaling * -43.3, scaling * 50, 0);
-            case 2 -> new Polygon(0, 0, scaling * 50, 0, scaling * 50, scaling * 50, 0, scaling * 50);
-            default -> throw new IllegalStateException("Unexpected value: " + shape);
+    public Shape createShape(SymbolShape symbolShape, SymbolColor symbolColor, SymbolShading symbolShading, double scaling) {
+        Shape shapeDisplayed = switch (symbolShape) {
+            case SymbolShape.CIRCLE -> new Circle(scaling * 25);
+            case SymbolShape.TRIANGLE -> new Polygon(0, 0, scaling * 25, scaling * -43.3, scaling * 50, 0);
+            case SymbolShape.SQUARE -> new Polygon(0, 0, scaling * 50, 0, scaling * 50, scaling * 50, 0, scaling * 50);
         };
-        switch (color) {
-            case 0:
+        switch (symbolColor) {
+            case SymbolColor.GREEN:
                 shapeDisplayed.setStroke(Color.web("#64b258"));
                 break;
-            case 1:
+            case SymbolColor.RED:
                 shapeDisplayed.setStroke(Color.web("#eb2028"));
                 break;
-            case 2:
+            case SymbolColor.BLUE:
                 shapeDisplayed.setStroke(Color.web("#585cb2"));
         }
-        switch (shading) {
-            case 0:
+        switch (symbolShading) {
+            case SymbolShading.OUTLINED:
                 shapeDisplayed.setFill(Color.WHITE);
                 shapeDisplayed.setStrokeWidth(scaling * 3);
                 break;
-            case 1:
+            case SymbolShading.GREY:
                 shapeDisplayed.setFill(Color.GREY);
                 shapeDisplayed.setStrokeWidth(scaling * 7);
                 shapeDisplayed.setStrokeType(StrokeType.INSIDE);
                 break;
-            case 2:
+            case SymbolShading.SOLID:
                 shapeDisplayed.setFill(shapeDisplayed.getStroke());
         }
         return shapeDisplayed;

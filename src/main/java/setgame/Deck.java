@@ -3,17 +3,22 @@ package setgame;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class handles the deck of a round of SET.
+ * Its purpose is to create and store the deck.
+ */
+
 public class Deck {
 
     private final ArrayList<Card> deck;
 
     public Deck() {
         deck = new ArrayList<>();
-        for (int i = 0; i <= 2; i++) {
-            for (int j = 0; j <= 2; j++) {
-                for (int k = 0; k <= 2; k++) {
-                    for (int l = 0; l <= 2; l++) {
-                        deck.add(new Card(i, j, k, l));
+        for (SymbolNumber symbolNumber : SymbolNumber.values()) {
+            for (SymbolShape symbolShape : SymbolShape.values()) {
+                for (SymbolColor symbolColor : SymbolColor.values()) {
+                    for (SymbolShading symbolShading : SymbolShading.values()) {
+                        deck.add(new Card(symbolNumber, symbolShape, symbolColor, symbolShading));
                     }
                 }
             }

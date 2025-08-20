@@ -1,5 +1,11 @@
 package setgame;
 
+/**
+ * This class handles the board of a round of SET.
+ * Its purpose is to check SETs and
+ * to find SETs or empty slots on the board.
+ */
+
 public class Board {
 
     private final Card[][] cards;
@@ -30,16 +36,16 @@ public class Board {
 
     // See https://www.youtube.com/watch?v=EkFX9jUJPKk to learn why this works
     public boolean checkIfSet(Card card1, Card card2, Card card3) {
-        if ((card1.number() + card2.number() + card3.number()) % 3 != 0) {
+        if ((card1.symbolNumber().ordinal() + card2.symbolNumber().ordinal() + card3.symbolNumber().ordinal()) % 3 != 0) {
             return false;
         }
-        if ((card1.color() + card2.color() + card3.color()) % 3 != 0) {
+        if ((card1.symbolColor().ordinal() + card2.symbolColor().ordinal() + card3.symbolColor().ordinal()) % 3 != 0) {
             return false;
         }
-        if ((card1.shape() + card2.shape() + card3.shape()) % 3 != 0) {
+        if ((card1.symbolShape().ordinal() + card2.symbolShape().ordinal() + card3.symbolShape().ordinal()) % 3 != 0) {
             return false;
         }
-        return (card1.shading() + card2.shading() + card3.shading()) % 3 == 0;
+        return (card1.symbolShading().ordinal() + card2.symbolShading().ordinal() + card3.symbolShading().ordinal()) % 3 == 0;
     }
 
     public int[] findSet() {

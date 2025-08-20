@@ -8,6 +8,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/**
+ * This class starts the application and creates the overall UI,
+ * allowing the user to switch between the game (class PlayView) and
+ * the instruction (class InstructionView).
+ */
+
 public class SetGameApplication extends Application {
 
     @Override
